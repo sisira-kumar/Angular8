@@ -1,0 +1,79 @@
+<div id="loading" *ngIf="loader">
+    <img id="loading-image" src="../assets/loader.gif" disable/>
+    </div>
+    <div class="container mt25">
+    <div class="row myButton">
+    <div class="col-md-2">
+    
+    <div class="row">
+    <div class="col btnHide" [ngClass]="{'btnShow': activeId == 1}" >
+    
+    <button id="btnPush" type="button" (click)="getPushApi();" class="btn btn-info btnSize">Push</button>
+    </div>
+    </div>
+    <br>
+    <br>
+    <div class="row">
+    <div class="col btnHide" [ngClass]="{'btnShow': activeId == 2}" >
+    <button id="btnReq" type="button" (click)="getLatency();" class="btn btn-success btnSize">Request</button>
+    </div>
+    </div>
+    <br />
+    <br />
+    <div class="row">
+    <div class="col btnHide" [ngClass]="{'btnShow': activeId == 3} " >
+    <button type="button" (click)="startDownloads();" class="btn btn-danger btnSize">Download</button>
+    </div>
+    </div>
+    <br>
+    <br>
+    <div class="row">
+    <div class="col btnHide" [ngClass]="{'btnShow': 4 == 4} " >
+    <button type="button" (click)="getDecomp();" class="btn btn-primary btnSize">Decompress</button>
+    </div>
+    </div>
+    
+    </div>
+    <div class="col-md-8">
+    <div id="textarea" contenteditable></div>
+    </div>
+    <div class="col-md-2"></div>
+    </div>
+    <br />
+    <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+    <!-- <div class="progress">
+    <div class="progress-bar" role="progressbar" [ngStyle]="{'width': percent}">{{percent}}</div>
+    </div> -->
+    <!-- <div class="progress progress-striped">
+    <div class="progress-bar progress-bar-success" style="width:0%"></div>
+    </div> -->
+    <div id="myProgress" class="progress">
+    <div id="myBar" class="progress-bar bg-success"></div>
+    </div>
+    </div>
+    <div class="col-md-2"></div>
+    </div>
+    <br />
+    <div class="row">
+    <div class="col-md-4 text-center p-0 d-flex align-items-center">
+    
+    <img id ="1" class="img-fluid position-relative mx-auto imght250" src="../assets/lap.png" alt="">
+    <h3 class="text-danger textonimage" >Peer 1</h3>
+    
+    </div>
+    <div class="col-md-4 text-center p-0 d-flex align-items-center">
+    
+    <img id="2" class="img-fluid position-relative mx-auto imght250" src="../assets/lap.png" alt="">
+    <h3 class="text-danger textonimage">Peer 2</h3>
+    
+    </div>
+    <div class="col-md-4 text-center p-0 d-flex align-items-center">
+    
+    <img id ="3" class="img-fluid position-relative mx-auto imght250" src="../assets/lap.png" alt="">
+    <h3 class="text-danger textonimage"[routerLink]="['/table', '3']">Peer 3</h3>
+    
+    </div>
+    </div>
+    </div>

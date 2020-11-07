@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title></title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <style>
+    
+#myProgress {
+  width: 100%;
+  background-color: #ddd;
+}
+
+#myBar {
+  width: 1%;
+  height: 30px;
+  background-color: #4CAF50;
+}
+    .myButton {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    img {
+      height: 150px;
+    }
+
+    .active {
+      -webkit-border-radius: 10px;
+      -moz-border-radius: 10px;
+      border-radius: 10px;
+      -webkit-box-shadow: 0px 0px 30px 0px rgba(0, 255, 0, 0.67);
+      -moz-box-shadow: 0px 0px 30px 0px rgba(0, 255, 0, 0.67);
+      box-shadow: 0px 0px 30px 0px rgba(0, 255, 0, 0.67);
+    }
+
+    .imgPeer:hover {
+      -webkit-border-radius: 10px;
+      -moz-border-radius: 10px;
+      border-radius: 10px;
+      -webkit-box-shadow: 0px 0px 30px 0px rgba(0, 255, 0, 0.67);
+      -moz-box-shadow: 0px 0px 30px 0px rgba(0, 255, 0, 0.67);
+      box-shadow: 0px 0px 30px 0px rgba(0, 255, 0, 0.67);
+    }
+
+    .btn:hover {
+      box-shadow: 0px 0px 3px 0px #333;
+    }
+
+    .navbar {
+      box-shadow: 0px 0px 10px 0px #333;
+      background-color: #498a8d59
+    }
+
+    #textarea {
+      -moz-appearance: textfield-multiline;
+      -webkit-appearance: textarea;
+      border: 1px solid gray;
+      font: medium -moz-fixed;
+      font: -webkit-small-control;
+      height: 28px;
+      overflow: auto;
+      padding: 2px;
+      resize: both;
+      height: 400px;
+      background-color: #eff0f1;
+         font-family: verdana;
+         font-size: 14px;
+    }
+  </style>
+</head>
+
+<body style="background-color:#f7fce32e">
+
+  <nav class="navbar navbar-light">
+    <div class="row">
+      <div class="col-md-4">
+
+        <img src="../assets/logo1.png" style=" width: 300px" />
+      </div>
+      <div class="col-md-4">
+        <h1 style="color: darkred;">Decentralized Application</h1>
+      </div>
+      <div class="col-md-4">
+
+        <img src="../assets/logo1.png" style=" width: 300px" />
+      </div>
+    </div>
+  </nav>
+
+
+  <div class="container">
+    <div class="row myButton">
+      <div class="col-md-2">
+        <div class="row">
+          <div class="col ">
+            <button type="button" (click)="getIp();" class="btn btn-success btn-lg">Request</button>
+          </div>
+        </div>
+        <br />
+        <br />
+        <div class="row">
+          <div class="col">
+            <button type="button" (click)="stopLoading()" class="btn btn-primary btn-lg">Download</button>
+          </div>
+        </div>
+
+      </div>
+      <div class="col-md-10">
+        <div id="textarea" contenteditable>
+          <img *ngIf="loading" src="../assets/loader.gif" disable/>
+        </div>
+      </div>
+    </div>
+    <br />
+    <div class="row">
+      <div class="col align-self-center">
+      
+            <div id="myProgress">
+                <div id="myBar"></div>
+              </div>
+      
+    </div>
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-3">
+        <div class="card-header">Peer 1</div>
+        <div class="card-body">
+          <img class="imgPeer rounded float-right"  src="../assets/lap.png">
+        </div>
+
+      </div>
+
+      <div class="col-md-3">
+        <div class="card-header">Peer 2</div>
+        <div class="card-body">
+          <img class="imgPeer rounded float-right" [ngClass]="{'active': activeId === 1 }" src="../assets/lap.png">
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="card-header">Peer 3</div>
+        <div class="card-body">
+          <img class="imgPeer rounded float-right" src="../assets/lap.png">
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
